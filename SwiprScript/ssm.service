@@ -1,0 +1,16 @@
+[Unit]
+Description="Swipr Script Monitor"
+After=network.target
+StartLimitInterval=200
+StartLimitBurst=5
+
+[Service]
+User=science
+Group=science
+WorkingDirectory=/home/science/swipr/swiprscript
+ExecStart=/home/science/swipr/swiprscript/sss_start.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
